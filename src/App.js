@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router,
   Switch,
   Route,
-  Link
   } from 'react-router-dom';
 function App() {
   return (
@@ -15,6 +14,18 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Shop />
+          </Route>
+          <Route path='/shop'>
+            <Shop />
+          </Route>
+          <Route path='/review'>
+            <h1> This is Product Review Page</h1>
+          </Route>
+          <Route path='/inventory'>
+            <h1 className="bg-primary"> This is Product inventory Page</h1>
+          </Route>
+          <Route path='*'>
+            <h1 className="bg-danger"> Sorry Invalid URL</h1>
           </Route>
        </Switch>
       </Router>

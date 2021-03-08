@@ -16,7 +16,7 @@ const Header = () => {
           />
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/shop">Shop</Nav.Link>
           <Nav.Link href="/review">Order Review</Nav.Link>
           <Nav.Link href="/inventory">Inventory</Nav.Link>
         </Nav>
