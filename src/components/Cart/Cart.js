@@ -26,11 +26,11 @@ const Cart = (props) => {
   return (
     <div className="border border-primary rounded mt-2 p-3">
       <h1 className="text-center">Your Cart Review</h1>
-      <h5>Total Product Added:{products.length}</h5>
+      <h4>Total Product Added:{products.length}</h4>
       <p>Total Price: {totalPrice.toFixed(2)}</p>
       <p>Tax<small>(10% vat) :</small> {tax.toFixed(2)}</p>
       <p>Shipping Charge: {shipping.toFixed(2)}</p>
-      <p>Total Amount: {totalAmount}</p>
+      <h4>Total Amount: {totalAmount}</h4>
       <Link to='/review'>
         <Button>Review Your Order</Button>
       </Link>
