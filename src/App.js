@@ -6,6 +6,7 @@ import { BrowserRouter as Router,
   Switch,
   Route,
   } from 'react-router-dom';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 function App() {
   return (
     <>
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path='/inventory'>
             <h1 className="bg-primary"> This is Product inventory Page</h1>
+          </Route>
+          <Route path='/product/:productKey'>
+            <ProductDetails />
           </Route>
           <Route path='*'>
             <h1 className="bg-danger"> Sorry Invalid URL</h1>
