@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 const Cart = (props) => {
   const products = props.cart;
   const totalPrice = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
@@ -31,9 +29,6 @@ const Cart = (props) => {
       <p>Tax<small>(10% vat) :</small> {tax.toFixed(2)}</p>
       <p>Shipping Charge: {shipping.toFixed(2)}</p>
       <h4>Total Amount: {totalAmount}</h4>
-      <Link to='/review'>
-        <Button>Review Your Order</Button>
-      </Link>
     </div>
   );
 };
