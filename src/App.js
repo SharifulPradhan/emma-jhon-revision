@@ -7,6 +7,7 @@ import { BrowserRouter as Router,
   Route,
   } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import Review from './components/Review/Review';
 function App() {
   return (
     <>
@@ -20,7 +21,7 @@ function App() {
             <Shop />
           </Route>
           <Route path='/review'>
-            <h1> This is Product Review Page</h1>
+            <Review />
           </Route>
           <Route path='/inventory'>
             <h1 className="bg-primary"> This is Product inventory Page</h1>

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 const Cart = (props) => {
   const products = props.cart;
-  const totalPrice = products.reduce((sum, product) => sum + product.price, 0)
+  const totalPrice = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
   
   const tax = totalPrice % 10;
 
@@ -24,7 +24,7 @@ const Cart = (props) => {
   const totalAmount = (totalPrice + tax + shipping).toFixed(2);
   
   return (
-    <div className="border border-primary rounded mt-2 p-3">
+    <div className="border border-primary rounded mt-2 p-3 sticky-top">
       <h1 className="text-center">Your Cart Review</h1>
       <h4>Total Product Added:{products.length}</h4>
       <p>Total Price: {totalPrice.toFixed(2)}</p>
