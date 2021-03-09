@@ -1,10 +1,15 @@
-import { Button } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import data from '../../fakeData'
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
+
+
+
+
+
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);

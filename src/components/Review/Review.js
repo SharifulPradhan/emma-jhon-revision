@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
-
+import Button from 'react-bootstrap/Button';
 const Review = () => {
   
   const [cart, setCart] = useState([]);
+
+  const handleConfirmOrder = () => {
+    setCart([]);
+    processOrder();
+  }
 
   const removeProduct = productKey => {
     const newCart = cart.filter(pd => pd.key !== productKey);
@@ -36,7 +41,9 @@ const Review = () => {
       </div>
 
       <div className="col-4">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart}>
+          <Button onClick={() => handleConfirmOrder()}> Confirm Order </Button>
+        </Cart>
       </div>
     </div>
   );

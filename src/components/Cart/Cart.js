@@ -29,6 +29,10 @@ const Cart = (props) => {
       <p>Tax<small>(10% vat) :</small> {tax.toFixed(2)}</p>
       <p>Shipping Charge: {shipping.toFixed(2)}</p>
       <h4>Total Amount: {totalAmount}</h4>
+      <br/>
+      {
+        props.children
+      }
     </div>
   );
 };
