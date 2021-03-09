@@ -4,12 +4,16 @@ import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../uti
 import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
 import Button from 'react-bootstrap/Button';
-const Review = () => {
-  
-  const [cart, setCart] = useState([]);
+import ConfirmImage from '../../images/giphy.gif';
 
+
+
+const Review = () => {
+  const [cart, setCart] = useState([]);
+  const [confrimOrder, setConfirmOrder] = useState(false);
   const handleConfirmOrder = () => {
     setCart([]);
+    setConfirmOrder(true);
     processOrder();
   }
 
@@ -31,12 +35,20 @@ const Review = () => {
       setCart(cartProducts);
   }, []);
 
+
+  let confirmImage 
+  if(confrimOrder){
+    confirmImage = <img src={ConfirmImage} alt=''/>;
+  }
   return (
     <div className="row">
       
       <div className="col-8">
         {
         cart.map(pd => <ReviewItems products={pd} key={pd.key} removeProduct = {removeProduct}></ReviewItems> )
+        }
+        {
+          confirmImage 
         }
       </div>
 
