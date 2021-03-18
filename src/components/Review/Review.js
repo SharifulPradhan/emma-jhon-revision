@@ -5,16 +5,16 @@ import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
 import Button from 'react-bootstrap/Button';
 import ConfirmImage from '../../images/giphy.gif';
+import { useHistory } from 'react-router';
 
 
 
 const Review = () => {
   const [cart, setCart] = useState([]);
   const [confrimOrder, setConfirmOrder] = useState(false);
-  const handleConfirmOrder = () => {
-    setCart([]);
-    setConfirmOrder(true);
-    processOrder();
+  const history = useHistory()
+  const handleProceedOrder = () => {
+    history.push('/shipment');
   }
 
   const removeProduct = productKey => {
@@ -54,7 +54,7 @@ const Review = () => {
 
       <div className="col-4">
         <Cart cart={cart}>
-          <Button onClick={() => handleConfirmOrder()}> Confirm Order </Button>
+          <Button onClick={() => handleProceedOrder()}> Proceed Order </Button>
         </Cart>
       </div>
     </div>

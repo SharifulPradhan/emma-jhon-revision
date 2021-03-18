@@ -8,11 +8,14 @@ import { BrowserRouter as Router,
   } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Review from './components/Review/Review';
+import Inventory from './components/Inventory/Inventory';
+import Login from './components/Login/Login';
+import Shipment from './components/Shipment/Shipment';
 function App() {
   return (
     <>
-      <Header></Header>
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Shop />
@@ -24,7 +27,13 @@ function App() {
             <Review />
           </Route>
           <Route path='/inventory'>
-            <h1 className="bg-primary"> This is Product inventory Page</h1>
+            <Inventory/>
+          </Route>
+          <Route path='/login'>
+            <Login/>
+          </Route>
+          <Route path='/shipment'>
+            <Shipment/>
           </Route>
           <Route path='/product/:productKey'>
             <ProductDetails />
